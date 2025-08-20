@@ -1,11 +1,12 @@
 ---
 import ButtonLink from "./ButtonLink.astro"
-
+import Container from "./Container.astro"
+import Section from "./Section.astro"
 
 ---
 
 
-<div class="container">
+<Section>
   <header id="header">
     <div class="content">
       <h1>
@@ -24,22 +25,10 @@ import ButtonLink from "./ButtonLink.astro"
     </div>
     <img src="images/placeholder.png" alt="placeholder"/>
   </header>
-</div>
+</Section>
 
 
 <style>
-
-  .container{
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0px 60px;
-
-    @media screen and (max-width: 1000px) {
-      &{
-        padding: 0 24px;
-      }
-    }
-  }
 
   #header{
     display: grid;
