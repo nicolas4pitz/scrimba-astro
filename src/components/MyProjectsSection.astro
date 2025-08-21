@@ -2,37 +2,10 @@
 const heading = "My Projects";
 const cta = {text : 'View All', href: '/projects'};
 
+import projects from "../data/projects.json";
 import Section from '../components/Section.astro';
 import SectionHeader from './SectionHeader.astro';
 
-const projects = [
-  {
-    title : "To/Do List Web Page",
-    slug: "project-1",
-    description: "A fast, scalable to/do list web page for managing tasks. Built with React, TailWindCSS, Node.js and Fastify.",
-    image: "projects/pr3.png",
-    githubURL: "https://github.com/nicolas4pitz/meta-project-react-javascript",
-    liveSiteURL: ""
-  },
-
-  {
-    title : "NES Emulator Game Landing Page",
-    slug: "project-2",
-    description: "A design of a popular NES Emulator for PC. Built with Wordpress",
-    image: "/projects/pr2.png",
-    githubURL: "https://github.com/nicolas4pitz/",
-    liveSiteURL: ""
-  },
-
-  {
-    title : "Netflix Mini Clone",
-    slug: "project-3",
-    description: "A simple landing page from the popular Netflix Home Page. Built with HTML5, CSS3 and JavaScript",
-    image: "/projects/pr1.png",
-    githubURL: "https://github.com/nicolas4pitz/netflix",
-    liveSiteURL: ""
-  },
-]
 
 ---
 
