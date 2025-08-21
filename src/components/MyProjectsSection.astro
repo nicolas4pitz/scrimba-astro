@@ -3,7 +3,7 @@ const heading = "My Projects";
 const cta = {text : 'View All', href: '/projects'};
 
 import Section from '../components/Section.astro';
-
+import SectionHeader from './SectionHeader.astro';
 
 const projects = [
   {
@@ -38,14 +38,7 @@ const projects = [
 
 
 <Section darker={true}>
-  <div class="section-header">
-      <h2>
-        <!-- add the h2 heading -->
-        {heading}
-      </h2>
-      <!-- update the href and text using the cta object -->
-      <a href={cta.href}>{cta.text}</a>
-  </div>
+  <SectionHeader cta={cta} heading={heading}/>
 
   <div class="projects-container">
     <!-- dynamically render project cards -->
@@ -100,25 +93,7 @@ const projects = [
     }
   }
 
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 60px;
-    
-    h2 {
-        margin: 0;
-        font-size: 32px;
-        font-weight: 600;
-    } 
-
-    a {
-        size: 16px;
-        text-decoration: none;
-        font-weight: 400;
-        color: var(--dark);
-    }
-  }
+  
 
 
 </style>
