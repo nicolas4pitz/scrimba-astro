@@ -2,7 +2,12 @@
 const heading = "My Projects";
 const cta = {text : 'View All', href: '/projects'};
 
-import projects from "../data/projects.json";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection('project');
+
+
+
 import Section from '../components/Section.astro';
 import SectionHeader from './SectionHeader.astro';
 
@@ -18,8 +23,8 @@ import SectionHeader from './SectionHeader.astro';
     <!-- each card has a class of card, an image, and an h3 that links to the liveSiteURL -->
     { projects.map(project => (
       <div class="card">
-        <img src={project.image} alt={project.title} />
-        <h3><a href={project.liveSiteURL}>{project.title}</a></h3>
+        <img src={project.data.image} alt={project.data.title} />
+        <h3><a href={project.data.liveSiteURL}>{project.data.title}</a></h3>
       </div>
     ))
 
