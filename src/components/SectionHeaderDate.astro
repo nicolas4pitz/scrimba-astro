@@ -1,0 +1,43 @@
+---
+interface Props{
+    date: Date,
+    heading: string
+}
+
+const { date, heading } = Astro.props;
+
+---
+
+
+<div class="section-header">
+    <h1>
+      <!-- add the h2 heading -->
+      {heading}
+    </h1>
+    <!-- update the href and text using the cta object -->
+    <p>{date.toDateString()}</p>
+</div>
+
+
+
+<style>
+    .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    
+    h1 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 600;
+    } 
+
+    a {
+        size: 16px;
+        text-decoration: none;
+        font-weight: 400;
+        color: var(--dark);
+    }
+  }
+</style>

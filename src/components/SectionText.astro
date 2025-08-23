@@ -1,0 +1,26 @@
+---
+
+interface Props {
+  texts: Array<String>;
+}
+
+const { texts } = Astro.props;
+
+---
+
+
+<div class="section-text">
+  { texts.map( texto => (
+    <p>{texto}</p>
+  ))
+
+  }
+</div>
+
+
+<style>
+  .section-text{
+    display: grid;
+    gap: 24px;
+  }
+</style>

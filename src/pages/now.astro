@@ -1,0 +1,44 @@
+---
+
+import Layout from "../layouts/Layout.astro"
+import Section from "../components/Section.astro"
+import SectionHeaderDate from "../components/SectionHeaderDate.astro";
+import SectionText from "../components/SectionText.astro";
+
+let title = "Now";
+let date:Date = new Date(2025, 8, 23, 11, 30, 0, 0);
+
+let texts = [
+  "I've been working on a scholarship project at IFSC-São José, in partnership with Huawei and FEESC. My role was mostly about helping with educational administration and marketing. Honestly, it wasn't that stressful — we were three people on the team, the tasks were well split, and things rarely went wrong. Usually, projects like this take a bit more effort, but this one ended up being pretty smooth.",
+  "Outside of that, I've gotten back to the gym — at least four times a week. I'm also paying more attention to what I eat, trying to see better results. Oh, and after some delays (printing errors and almost two months of waiting), I finally got my passport!",
+  "Lately, I've been spending over 4 hours a day learning new stuff and working on my skills. I want to start some personal projects soon, but with more planning this time, so I don't abandon them halfway. I've also been contributing to open-source projects on GitHub, like OuterTune — a free music player app that uses public APIs.",
+  "My daily routine is pretty packed: wake up, study, work, study (school), hit the gym. I don't have much free time, but when I do, I like to play games. Competitive ones like Valorant are always fun, and I also enjoy single-player adventures like Elden Ring.",
+  "I really want to explore other countries — either just traveling for a while or maybe living abroad for some time."
+]
+---
+
+<Layout title="Now">
+  <Section >
+    <SectionHeaderDate heading={title} date={date}/>
+    <SectionText texts={texts}/>
+  </Section>
+</Layout>
+
+
+
+<!--<p>I've been working on a scholarship project at IFSC-São José, in partnership with Huawei and FEESC. My role was mostly about helping with educational administration and marketing. Honestly, it wasn't that stressful — we were three people on the team, the tasks were well split, and things rarely went wrong. Usually, projects like this take a bit more effort, but this one ended up being pretty smooth.</p>
+
+      <p>Outside of that, I've gotten back to the gym — at least four times a week. I'm also paying more attention to what I eat, trying to see better results. Oh, and after some delays (printing errors and almost two months of waiting), I finally got my passport!</p>
+
+      <p>Lately, I've been spending over 4 hours a day learning new stuff and working on my skills. I want to start some personal projects soon, but with more planning this time, so I don't abandon them halfway. I've also been contributing to open-source projects on GitHub, like OuterTune — a free music player app that uses public APIs.</p>
+
+      <p>My daily routine is pretty packed: wake up, study, work, study (school), hit the gym. I don't have much free time, but when I do, I like to play games. Competitive ones like Valorant are always fun, and I also enjoy single-player adventures like Elden Ring.</p>
+
+      <p>I really want to explore other countries — either just traveling for a while or maybe living abroad for some time.</p> -->
+
+<style>
+  .section-text{
+    display: grid;
+    gap: 24px;
+  }
+</style>
