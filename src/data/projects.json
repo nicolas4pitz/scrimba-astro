@@ -3,7 +3,7 @@
       "title" : "To/Do List Web Page",
       "slug": "project-1",
       "description": "A fast, scalable to/do list web page for managing tasks. Built with React, TailWindCSS, Node.js and Fastify.",
-      "image": "/images/projects/pr3.png",
+      "image": "/images/projects/todo.png",
       "githubURL": "https://github.com/nicolas4pitz/meta-project-react-javascript",
       "liveSiteURL": "https://github.com/nicolas4pitz/meta-project-react-javascript"
     },
