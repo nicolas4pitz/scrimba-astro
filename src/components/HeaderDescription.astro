@@ -1,0 +1,36 @@
+---
+import HorizontalSeparatorSection from "./HorizontalSeparatorSection.astro";
+
+
+interface Props{
+  heading: string,
+}
+
+const {heading} = Astro.props;
+
+---
+
+
+<div id="header-description">
+  <h1>{heading}</h1>
+  <p>List of some of the projects I have or I am currently working on.</p>
+  <HorizontalSeparatorSection />
+</div>
+
+
+
+<style is:global>
+
+#header-description{
+
+  h1{
+    margin-bottom: 10px;
+  }
+
+  p{
+    margin-bottom: 30px;
+  }
+
+}
+
+</style>

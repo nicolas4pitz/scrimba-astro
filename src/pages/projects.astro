@@ -4,6 +4,8 @@ import ButtonLink from "../components/ButtonLink.astro";
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import HorizontalSeparator from "../components/HorizontalSeparator.astro";
+import NavBar from "../components/NavBar.astro";
+import HeaderDescription from "../components/HeaderDescription.astro";
 
 const projects = await getCollection("project");
 
@@ -11,30 +13,32 @@ const heading = "My Projects"
 
 ---
 
+<NavBar />
 <Layout>
   <Section>
-    <h1>{heading}</h1>
+    <HeaderDescription heading="Projects"/>
     {projects.map(project => (
-      <div class="card">
-        <img src={project.data.image} alt={project.data.title} />
-        <div>
-          <h3>{project.data.title}</h3>
-          <p class="description">{project.data.description}</p>
-          <div class="button-container">
-            <ButtonLink
-              href={`${project.data.githubURL}`}
-              text="View on Github"
-              variant="secondary"
-            />
-            <ButtonLink
-              href={`${project.data.liveSiteURL}`}
-              text="View Live"
-            />
-          </div>
-        </div>
+      <a href={`${project.data.githubURL}`}>
+        <div class="card">
+            <div>
+              <h3>{project.data.title}</h3>
+              <p class="description">{project.data.description}</p>
+              {/* <div class="button-container">
+                <ButtonLink
+                  href={`${project.data.githubURL}`}
+                  text="View on Github"
+                  variant="secondary"
+                />
+                <ButtonLink
+                  href={`${project.data.liveSiteURL}`}
+                  text="View Live"
+                />
+              </div> */}
+            </div>
         
-      </div>
-      <HorizontalSeparator/>
+        </div>
+      </a>
+      <HorizontalSeparator margin="16px 0px"/>
     ))
 
     }
@@ -45,19 +49,31 @@ const heading = "My Projects"
 
 <style>
 
+  a{
+    text-decoration: none;
+
+
+    :hover{
+      background-color: var(--secondary);
+    }
+  }
+
   .card {
     overflow: hidden;
     display: flex;
     gap: 40px;
+    padding: 12px;
+
+    
 
     h3{
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 4px;
     }
 
     .description {
-      margin-bottom: 40px;
+      font-size: 14px;
     }
 
     img {

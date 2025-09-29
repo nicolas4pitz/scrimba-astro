@@ -1,0 +1,47 @@
+---
+import Container from '../Container.astro';
+
+// interface Props {
+//   darker?: boolean;
+// }
+
+// const { darker = false} = Astro.props;
+
+---
+
+<section>
+  <Container>
+    <slot />
+  </Container>
+</section>
+
+
+
+
+<style> 
+
+  section{
+    padding: 80px 0;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    &.darker{
+      background: var(--secondary);
+    }
+
+    @media (max-width: 1000px) {
+      & {
+        padding: 40px 0;
+      }
+    }
+  }
+
+  .darker{
+    background-color: #151515;
+  }
+
+</style>
