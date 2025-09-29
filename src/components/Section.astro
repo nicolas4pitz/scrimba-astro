@@ -3,13 +3,14 @@ import Container from './Container.astro';
 
 interface Props {
   darker?: boolean;
+  gridForm?: boolean;
 }
 
-const { darker = false} = Astro.props;
+const { darker = false, gridForm = false} = Astro.props;
 
 ---
 
-<section class={darker ? 'darker': ''}>
+<section class={`${darker ? 'darker': ''} ${gridForm ? 'gridForm' : ''}`}>
   <Container>
     <slot />
   </Container>
@@ -37,6 +38,9 @@ const { darker = false} = Astro.props;
 
   .darker{
     background-color: #151515;
+  }
+
+  .gridForm{
   }
 
 </style>

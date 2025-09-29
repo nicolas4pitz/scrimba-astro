@@ -19,6 +19,34 @@ const project = defineCollection({
     description: z.string().optional(),
     image: z.string(),
     slug: z.string(),
+    IsIt: z.string(),
+    githubURL: z.string(),
+    liveSiteURL: z.string()
+  })
+});
+
+
+const websites = defineCollection({
+  loader: file('src/data/websites.json'),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    image: z.string(),
+    slug: z.string(),
+    IsIt: z.string(),
+    githubURL: z.string(),
+    liveSiteURL: z.string()
+  })
+});
+
+const games = defineCollection({
+  loader: file('src/data/games.json'),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    image: z.string(),
+    slug: z.string(),
+    IsIt: z.string(),
     githubURL: z.string(),
     liveSiteURL: z.string()
   })
@@ -26,5 +54,4 @@ const project = defineCollection({
 
 
 
-
-export const collections = { project, blog };
+export const collections = { project, blog, websites, games };

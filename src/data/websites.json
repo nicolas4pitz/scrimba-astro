@@ -1,0 +1,31 @@
+[
+    {
+      "title" : "To/Do List Web Page",
+      "slug": "project-1",
+      "IsIt": "Website", 
+      "description": "A fast, scalable to/do list web page for managing tasks. Built with React, TailWindCSS, Node.js and Fastify.",
+      "image": "/images/projects/todo.png",
+      "githubURL": "https://github.com/nicolas4pitz/meta-project-react-javascript",
+      "liveSiteURL": "https://github.com/nicolas4pitz/meta-project-react-javascript"
+    },
+  
+    {
+      "title" : "NES Emulator Game Landing Page",
+      "slug": "project-2",
+      "IsIt": "Website", 
+      "description": "A design of a popular NES Emulator for PC. Built with Wordpress",
+      "image": "/images/projects/pr2.png",
+      "githubURL": "https://github.com/nicolas4pitz/",
+      "liveSiteURL": "https://github.com/nicolas4pitz/"
+    },
+  
+    {
+      "title" : "Netflix Mini Clone",
+      "slug": "project-3",
+      "IsIt": "Website", 
+      "description": "A simple landing page from the popular Netflix Home Page. Built with HTML5, CSS3 and JavaScript",
+      "image": "/images/projects/pr1.png",
+      "githubURL": "https://github.com/nicolas4pitz/netflix",
+      "liveSiteURL": "https://nicolas4pitz.github.io/netflix/"
+    }
+  ]

@@ -9,45 +9,93 @@ import HeaderDescription from "../components/HeaderDescription.astro";
 
 const projects = await getCollection("project");
 
+const websites = await getCollection("websites");
+
+const games = await getCollection("games");
+
 const heading = "My Projects"
 
 ---
 
 <NavBar />
 <Layout>
-  <Section>
+  <Section gridForm={true}>
     <HeaderDescription heading="Projects"/>
-    {projects.map(project => (
-      <a href={`${project.data.githubURL}`}>
-        <div class="card">
-            <div>
-              <h3>{project.data.title}</h3>
-              <p class="description">{project.data.description}</p>
-              {/* <div class="button-container">
-                <ButtonLink
-                  href={`${project.data.githubURL}`}
-                  text="View on Github"
-                  variant="secondary"
-                />
-                <ButtonLink
-                  href={`${project.data.liveSiteURL}`}
-                  text="View Live"
-                />
-              </div> */}
-            </div>
-        
-        </div>
-      </a>
-      <HorizontalSeparator margin="16px 0px"/>
-    ))
 
-    }
+
+    <div id="grid-separator">
+      <h2>Software</h2>
+      <div class="grid-enclauser">
+        {projects.map(project => (
+          <a href={`${project.data.githubURL}`}>
+            <div class="card">
+                <div>
+                  <h3>{project.data.title}</h3>
+                  <p class="description">{project.data.description}</p>
+                </div>
+            </div>
+          </a>
+          <HorizontalSeparator margin="16px 0px"/>
+        ))}
+      </div>
+
+      <h2>Games</h2>
+      <div class="grid-enclauser">
+        {games.map(games => (
+          <a href={`${games.data.githubURL}`}>
+            <div class="card">
+                <div>
+                  <h3>{games.data.title}</h3>
+                  <p class="description">{games.data.description}</p>
+                </div>
+            </div>
+          </a>
+          <HorizontalSeparator margin="16px 0px"/>
+        ))}
+      </div>
+
+      <h2>Websites</h2>
+      <div class="grid-enclauser">
+        {websites.map(website => (
+          <a href={`${website.data.githubURL}`}>
+            <div class="card">
+                <div>
+                  <h3>{website.data.title}</h3>
+                  <p class="description">{website.data.description}</p>
+                </div>
+            </div>
+          </a>
+          <HorizontalSeparator margin="16px 0px"/>
+        ))}
+      </div>
+
+
+    </div>
   </Section>
 </Layout>
 
 
 
 <style>
+
+  #grid-separator{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+
+    h2{
+      font-size: 20px;
+      color: var(--light);
+      user-select: none;
+      padding-top: 12px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    #grid-separator{
+      grid-template-columns: 1fr; /* Uma coluna única para telas grandes */
+    }
+  }
 
   a{
     text-decoration: none;
@@ -90,6 +138,11 @@ const heading = "My Projects"
     
     
     @media (max-width: 800px) {
+      #grid-separator{
+        display: grid;
+        grid-template-columns: auto;
+      }
+
       & {
         flex-direction: column;
       }
