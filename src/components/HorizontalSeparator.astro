@@ -1,4 +1,15 @@
-<div class="horizontal-separator"></div>
+---
+
+interface Props{
+  margin?: string
+}
+
+const { margin = "" } = Astro.props;
+
+---
+
+
+<div class=`horizontal-separator ${margin}` style=`margin: ${margin}`></div>
 
 
 <style>

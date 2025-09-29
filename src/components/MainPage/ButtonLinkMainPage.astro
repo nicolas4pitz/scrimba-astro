@@ -1,0 +1,71 @@
+---
+
+
+import HorizontalSeparatorMainPage from "./HorizontalSeparatorMainPage.astro"
+
+interface Props{
+  href: string;
+  text: String;
+}
+
+const {href, text} = Astro.props;
+
+
+---
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona TODOS os elementos com a classe .linka
+    const linkas = document.querySelectorAll(".linka");
+    
+    // Aplica os event listeners para cada um
+    linkas.forEach(linka => {
+      // Quando o mouse entra no elemento
+      linka.addEventListener('mouseenter', () => {
+        linka.classList.add('hover-active');
+      });
+      
+      // Quando o mouse sai do elemento
+      linka.addEventListener('mouseleave', () => {
+        linka.classList.remove('hover-active');
+      });
+    });
+  });
+</script>
+
+
+
+{
+    <a class="linka" href={`${href}`}>{text}</a>
+    <HorizontalSeparatorMainPage/>
+}
+
+<style>
+
+  .linka{
+    color: var(--dark);
+    text-decoration: none;
+    text-align: right;
+    font-weight: 500;
+    width: 100%;
+  }
+
+  .linka:hover{
+    transition: 0.25s;
+    color: var(--primary);
+  }
+
+  
+  .linka.hover-active {
+    transition: 0.25s;
+    color: var(--primary);
+  }
+  
+  /* Você pode aplicar estilos ao componente filho quando a classe hover-active está presente */
+  .linka.hover-active + :global(*) {
+    transition: 0.25s;
+    /* Estilos para o HorizontalSeparatorMainPage quando hover está ativo */
+    background-color: var(--primary);
+  }
+
+</style>

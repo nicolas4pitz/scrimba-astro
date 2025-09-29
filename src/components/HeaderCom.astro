@@ -2,79 +2,74 @@
 import ButtonLink from "./ButtonLink.astro"
 import Container from "./Container.astro"
 import Section from "./Section.astro"
+import SectionMainPage from './MainPage/SectionMainPage.astro'
+import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 
 ---
 
 
-<Section>
+<SectionMainPage>
   <header id="header">
-    <div class="content">
+    <div id="content-header">
       <h1>
-        Hi, I am Nicolas.
-        <span class="accent">Front-end</span> Developer!
-      </h1>
-      <p class="description">
-        I'm a Front-end Developer specializing in Svelte, Node.js, and database
-        management. I build scalable high-performance web applications and
-        efficient API integrations.
-      </p>
-      <div class="button-container">
-        <ButtonLink href="/projects" text="View projects" variant="secondary"/>
-        <ButtonLink href="/resume.pdf" text="Download resume" isDownload={true}/>
-      </div>
+        Nícolas Pitz</h1>
+      <span>Web Design & Developer</span>
     </div>
-    <img src="images/placeholder.png" alt="placeholder"/>
+    
+    <div class="button-container">
+      <ButtonLinkMainPage href="#" text="CV"/>
+      <ButtonLinkMainPage href="/now" text="ABOUT ME"/>
+      <ButtonLinkMainPage href="/projects" text="PROJECTS"/>
+      <ButtonLinkMainPage href="#" text="CONTACT"/>
+    </div>
+    <div class="imgs">
+      <img src="images/placeholder.png" alt="placeholder"/>
+    </div>
+    
   </header>
-</Section>
+</SectionMainPage>
 
 
 <style>
 
   #header{
     display: grid;
-    grid-template-columns: 540px 1fr;
-    justify-content: center;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 60px;
 
-    h1{
-      font-size: 44px;
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: column;
+    #content-header{
+      grid-column: span 2 / span 2;
+      
+      h1{
+        font-size: 144px;
+        display: block;
+        text-align: justify;
+        text-align-last: justify;
+      }
+      
 
-      .accent{
-        color: var(--primary);
+      span{
+        font-size: 26px;
+        display: block;
+        text-align: justify;
+        text-align-last: justify;
       }
     }
 
     .button-container{
-      display: flex;
-      gap: 10px;
+      grid-row-start: 2;
+      text-align: right;
     }
 
-    .description{
-      line-height: 28px;
-      color: var(--dark);
-      margin-bottom: 30px;
-    }
+    .imgs{
+      grid-row-start: 2;
+      text-align: right;
 
-    @media (max-width: 1000px) {  
-      &{
-          grid-template-columns: 1fr;
-          grid-template-rows: auto;
-          gap: 40px;
-
-          img{
-            grid-row: 1;
-          }
-        }
-    }
-
-    @media (max-width: 600px) {
-      .button-container{
-        flex-direction: column;
+      img{
+        width: 260px;
       }
     }
   }
+  
 </style>
