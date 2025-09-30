@@ -1,18 +1,28 @@
 ---
 import Container from "./Container.astro"
+import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
+
 ---
 
 <nav class="nav">
-  <Container>
+  <Container padding="16px">
     <div class="nav-container">
-      <div>
-        <a href="/"><img src="/images/NIC.svg" alt="Astra"/></a>
+      <div id="nav-container-image">
+        <a href="/"><img src="/images/np.svg" alt="Astra"/></a>
       </div>
       <ul class="nav-items">
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/now">Now</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li>
+          <ButtonLinkNavBar href="/projects" text="Projects"/>
+        </li>
+        <li>
+          <ButtonLinkNavBar href="/now" text="Now"/>
+        </li>
+        <li>
+          <ButtonLinkNavBar href="/blog" text="Blog"/>
+        </li>
+        <li>
+          <ButtonLinkNavBar href="/contact" text="Contact"/>
+        </li>
       </ul>
     </div>
   </Container>
@@ -22,6 +32,12 @@ import Container from "./Container.astro"
 <style>
   nav {
     background: var(--secondary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    z-index: 1000;
 
     img {
       height: 20px;
@@ -29,34 +45,60 @@ import Container from "./Container.astro"
 
     .nav-container {
       display: flex;
-      padding: 24px 0;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      height: 100%;
+      gap: 40px;
+      align-items: flex-start;
 
       .nav-items {
+        width: 100%;
         list-style-type: none;
         display: flex;
-        gap: 24px;
+        flex-direction: column;
+        gap: 4px;
+        margin: 0;
+        padding: 0;
 
         a {
-          text-decoration: none;
-          color: var(--dark);
-          font-size: 18px;
+          font-size: 14px;
         }
+      }
 
-        a:hover{
-          transition: 0.25;
-          color: var(--primary);
+      @media screen and (max-width: 768px) {
+        & {
+          width: 200px;
         }
       }
 
       @media screen and (max-width: 500px) {
         & {
-          flex-direction: column;
-          gap: 16px;
+          width: 100%;
+          padding: 16px;
         }
-        
       }
+    }
+  }
+
+  /* Adicione esta classe global para ajustar o conteúdo principal */
+  :global(body) {
+    margin-left: 250px;
+  }
+
+  @media screen and (max-width: 768px) {
+    :global(body) {
+      margin-left: 200px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    nav {
+      position: relative;
+      height: auto;
+      width: 100%;
+    }
+    
+    :global(body) {
+      margin-left: 0;
     }
   }
 </style>

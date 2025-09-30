@@ -4,16 +4,26 @@ import HorizontalSeparatorSection from "./HorizontalSeparatorSection.astro";
 
 interface Props{
   heading: string,
+  description: string,
+  links?: boolean
 }
 
-const {heading} = Astro.props;
+const {heading, description, links} = Astro.props;
 
 ---
 
 
 <div id="header-description">
   <h1>{heading}</h1>
-  <p>List of some of the projects I have or I am currently working on.</p>
+  <p>{description}</p>
+  {links && 
+    <div class="icons-container">
+      <a href="mailto:nicolas2004pitz@gmail.com" target="_blank"><img src="/images/icons/email.svg" alt="Email Placeholder"></a>
+      <a href="https://github.com/nicolas4pitz" target="_blank"><img src="/images/icons/github.svg" alt="Github Logo"></a>
+      <a href="https://www.linkedin.com/in/nicolas-pitz/" target="_blank"><img src="/images/icons/linkedin.svg" alt="Linkedin Logo"></a>
+      <a href=""><img src="/images/icons/x.svg" alt="X Logo"></a>
+    </div>
+  }
   <HorizontalSeparatorSection />
 </div>
 
@@ -25,10 +35,25 @@ const {heading} = Astro.props;
 
   h1{
     margin-bottom: 10px;
+    font-size: 90px;
+    text-transform: uppercase;
   }
 
   p{
     margin-bottom: 30px;
+  }
+
+  .icons-container{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  a:hover{
+
+    img{
+      filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(246deg) brightness(104%) contrast(99%);
+    }
   }
 
 }

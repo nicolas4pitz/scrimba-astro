@@ -1,7 +1,7 @@
 [
     {
       "title" : "To/Do List Web Page",
-      "slug": "project-1",
+      "slug": "todolist",
       "IsIt": "Website", 
       "description": "A fast, scalable to/do list web page for managing tasks. Built with React, TailWindCSS, Node.js and Fastify.",
       "image": "/images/projects/todo.png",
@@ -11,7 +11,7 @@
   
     {
       "title" : "NES Emulator Game Landing Page",
-      "slug": "project-2",
+      "slug": "neswebemulator",
       "IsIt": "Website", 
       "description": "A design of a popular NES Emulator for PC. Built with Wordpress",
       "image": "/images/projects/pr2.png",
@@ -21,7 +21,7 @@
   
     {
       "title" : "Netflix Mini Clone",
-      "slug": "project-3",
+      "slug": "netflix",
       "IsIt": "Website", 
       "description": "A simple landing page from the popular Netflix Home Page. Built with HTML5, CSS3 and JavaScript",
       "image": "/images/projects/pr1.png",
