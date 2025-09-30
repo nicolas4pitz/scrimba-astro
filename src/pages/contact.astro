@@ -1,15 +1,17 @@
 ---
 import Section from "../components/Section.astro";
 import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
 
 const title = "Contact";
 const email = "nicolas2004pitz@gmail.com";
 ---
 
 <Layout title="Contact">
+  <NavBar />
   <Section>
     <h1>{title}</h1>
     <p>You can contact me at <a href={`mailto:${email}`}>{email}.</a></p>
-	  <img src="/images/placeholder.png"/>
+    <img src="/images/placeholder.png"/>
   </Section>
 </Layout>

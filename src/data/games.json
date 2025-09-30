@@ -1,9 +1,9 @@
 [
     {
       "title" : "FlapBird",
-      "slug": "test",
+      "slug": "flapbird",
       "IsIt": "Generator",
-      "description": "A fast, scalable to/do list web page for managing tasks. Built with React, TailWindCSS, Node.js and Fastify.",
+      "description": "A FlapBird game with pure javascript",
       "image": "/images/projects/todo.png",
       "githubURL": "https://github.com/nicolas4pitz/meta-project-react-javascript",
       "liveSiteURL": "https://github.com/nicolas4pitz/meta-project-react-javascript"

@@ -13,6 +13,8 @@ const websites = await getCollection("websites");
 
 const games = await getCollection("games");
 
+//const prjWebPage = await getCollection("blog");
+
 const heading = "My Projects"
 
 ---
@@ -20,14 +22,14 @@ const heading = "My Projects"
 <NavBar />
 <Layout>
   <Section gridForm={true}>
-    <HeaderDescription heading="Projects"/>
+    <HeaderDescription heading="Projects" description="List of some of the projects I have or I am currently working on."/>
 
 
     <div id="grid-separator">
       <h2>Software</h2>
       <div class="grid-enclauser">
         {projects.map(project => (
-          <a href={`${project.data.githubURL}`}>
+          <a href={`/projects/${project.data.slug}`}>
             <div class="card">
                 <div>
                   <h3>{project.data.title}</h3>
@@ -42,7 +44,7 @@ const heading = "My Projects"
       <h2>Games</h2>
       <div class="grid-enclauser">
         {games.map(games => (
-          <a href={`${games.data.githubURL}`}>
+          <a href={`/projects/${games.data.slug}`}>
             <div class="card">
                 <div>
                   <h3>{games.data.title}</h3>
@@ -57,7 +59,7 @@ const heading = "My Projects"
       <h2>Websites</h2>
       <div class="grid-enclauser">
         {websites.map(website => (
-          <a href={`${website.data.githubURL}`}>
+          <a href={`/projects/${website.data.slug}`}>
             <div class="card">
                 <div>
                   <h3>{website.data.title}</h3>

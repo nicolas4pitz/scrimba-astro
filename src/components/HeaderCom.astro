@@ -46,6 +46,12 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
         display: block;
         text-align: justify;
         text-align-last: justify;
+
+        @media (max-width: 1000px) {
+          &{
+            font-size: 13vw;
+          }
+        }
       }
       
 
@@ -54,7 +60,15 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
         display: block;
         text-align: justify;
         text-align-last: justify;
+
+        @media (max-width: 800px) {
+          &{
+            font-size: 22px;
+          }
+        }
       }
+
+      
     }
 
     .button-container{
@@ -68,6 +82,18 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 
       img{
         width: 260px;
+
+        @media (max-width: 800px) {
+          &{
+            width: 200px;
+          }
+        }
+
+        @media (max-width: 450px) {
+          &{
+            width: 100px;
+          }
+        }
       }
     }
   }

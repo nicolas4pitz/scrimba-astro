@@ -1,7 +1,16 @@
 [
     {
-      "title" : "Ray Tracing",
-      "slug": "test",
+      "title" : "RayTracing",
+      "slug": "raytracing",
+      "IsIt": "Generator",
+      "description": "A fast, scalable to/do list web page for managing tasks. Built with React, TailWindCSS, Node.js and Fastify.",
+      "image": "/images/projects/todo.png",
+      "githubURL": "https://github.com/nicolas4pitz/meta-project-react-javascript",
+      "liveSiteURL": "https://github.com/nicolas4pitz/meta-project-react-javascript"
+    },
+    {
+      "title" : "Nes Emulator",
+      "slug": "nesemulator",
       "IsIt": "Generator",
       "description": "A fast, scalable to/do list web page for managing tasks. Built with React, TailWindCSS, Node.js and Fastify.",
       "image": "/images/projects/todo.png",
