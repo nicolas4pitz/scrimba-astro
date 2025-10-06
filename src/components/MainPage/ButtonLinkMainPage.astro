@@ -1,8 +1,6 @@
 ---
 
 
-import HorizontalSeparatorMainPage from "./HorizontalSeparatorMainPage.astro"
-
 interface Props{
   href: string;
   text: String;
@@ -35,12 +33,19 @@ const {href, text} = Astro.props;
 
 
 
-{
-    <a class="linka" href={`${href}`}>{text}</a>
-    <HorizontalSeparatorMainPage/>
-}
+
+<a href={`${href}`} id="all" class="linka">
+  {text}
+  <div class=`horizontal-separator`></div>
+</a>
+
 
 <style>
+
+  #all{
+    display: block;
+    text-decoration: none;
+  }
 
   .linka{
     color: var(--dark);
@@ -60,12 +65,25 @@ const {href, text} = Astro.props;
     transition: 0.25s;
     color: var(--primary);
   }
+
+
+  .horizontal-separator {
+    width: 100%;
+    height: 2px;
+    background-color: var(--dark);
+    margin: 10px 0;
+  }
+
+
+  .linka.hover-active .horizontal-separator{
+    background-color: var(--primary);
+  }
   
   /* Você pode aplicar estilos ao componente filho quando a classe hover-active está presente */
   .linka.hover-active + :global(*) {
     transition: 0.25s;
     /* Estilos para o HorizontalSeparatorMainPage quando hover está ativo */
-    background-color: var(--primary);
+    
   }
 
 </style>
