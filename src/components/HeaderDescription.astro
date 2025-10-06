@@ -5,17 +5,25 @@ import HorizontalSeparatorSection from "./HorizontalSeparatorSection.astro";
 interface Props{
   heading: string,
   description: string,
-  links?: boolean
+  links?: boolean,
+  inverter?: boolean
 }
 
-const {heading, description, links} = Astro.props;
+const {heading, description, links, inverter = false} = Astro.props;
 
 ---
 
 
 <div id="header-description">
-  <h1>{heading}</h1>
-  <p>{description}</p>
+  {inverter &&
+    <p>{description}</p>
+    <h1>{heading}</h1>
+  }
+
+  {!inverter &&
+    <h1>{heading}</h1>
+    <p>{description}</p>
+  }
   {links && 
     <div class="icons-container">
       <a href="mailto:nicolas2004pitz@gmail.com" target="_blank"><img src="/images/icons/email.svg" alt="Email Placeholder"></a>
@@ -41,6 +49,8 @@ const {heading, description, links} = Astro.props;
 
   p{
     margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 
   .icons-container{
