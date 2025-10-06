@@ -1,0 +1,221 @@
+---
+import { getCollection } from 'astro:content';
+import Section from '../components/Section.astro';
+import HorizontalSeparator from '../components/HorizontalSeparator.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+import BlogCard from '../components/BlogCard.astro';
+import Layout from '../layouts/Layout.astro';
+import NavBar from '../components/NavBar.astro';
+import HeaderDescription from '../components/HeaderDescription.astro';
+
+const work = await getCollection('work');
+
+const heading = 'CV';
+---
+<NavBar />
+<Layout title="Blog">
+  
+  <Section>
+    <HeaderDescription heading="CV" description="Web Developer And Software Developer" links={true}/>
+    <div class="overall">
+      <div id="main-stack">
+        <h2><strong>Main Stack</strong></h2>
+        <ul>
+          <li>Vite, Vitest</li>
+          <li>Typescript</li>
+          <li>TailwindCSS</li>
+          <li>Node.js</li>
+          <li>React, Next.js, Astro</li>
+        </ul>
+      </div>
+      <div id="lib-tools">
+        <h2><strong>Libraries / Tools</strong></h2>
+        <ul>
+          <li>Nuxt, Netlify, Tauri</li>
+          <li>Figma</li>
+          <li>TanStack Query, DrizzleORM, Zod, Fastify, Postman</li>
+          <li>Docker, Github</li>
+          <li>Git</li>
+        </ul>
+      </div>
+      <div id="exp-famility">
+        <h2><strong>Experience / Familiarity</strong></h2>
+        <ul>
+          <li>Svelte, DJango</li>
+          <li>Python, Rust</li>
+          <li>Unity</li>
+        </ul>
+      </div>
+    </div>
+    <div class="work">
+      <h2><strong>Work</strong></h2>
+      <div class="section">
+        {work.map( work => (
+          <div class="grid-enclauser">
+            <span>{work.data.date}</span>
+            <div class="exp">
+              <div class="exp-title">
+                <div class="exp-title-gradient"></div>
+                <h3><strong>{work.data.interprise}</strong></h3>
+              </div>
+              <p id="title-work">{work.data.title}</p>
+              <div class="exp-description">
+                <p>{work.data.description}</p>
+                <h4>Key responsibilities</h4>
+                <p>{work.data.responsability}</p>
+                <h4>New learnings</h4>
+                <p>{work.data.learning}</p>
+              </div>
+            </div>
+          </div>
+          <HorizontalSeparator margin="56px 0px"/>
+        ))}
+      </div>
+    </div>
+  </Section>
+</Layout>
+
+
+<style>
+  .work{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .section{
+      width: 85%;
+
+      @media (max-width: 750px) {
+        &{
+          width: 100%;
+        }
+      }
+    }
+
+    .grid-enclauser{
+      display: grid;
+      grid-template-columns: 96px 1fr;
+
+      @media (max-width: 500px) {
+        &{
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+
+      span{
+        font-size: 0.85rem;
+      }
+
+      .exp{
+
+        #title-work{
+          color: var(--light);
+          font-size: 0.9rem;
+          text-indent: 46px;
+          margin-bottom: 20px;
+
+          @media (max-width: 500px) {
+            &{
+              font-size: 0.8rem;
+            }
+          }
+        }
+
+        .exp-title{
+          display: grid;
+          grid-template-columns: 46px 1fr;
+
+            h3{
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            
+            @media (max-width: 500px) {
+              &{
+                font-size: 1.4rem;
+              }
+            }
+
+            strong{
+              font-weight: 700;
+            }
+          }
+
+          .exp-title-gradient{
+            width: 25px;
+            height: 25px;
+            background-color: rebeccapurple;
+          }
+        }
+
+        .exp-description{
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          p{
+            font-size: 1rem;  
+            line-height: 1.5rem;
+
+            @media (max-width: 500px) {
+                &{
+                  font-size: 0.9rem;
+                  line-height: 1.3rem;
+                }
+              }
+          }
+
+          h4{
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: capitalize;
+
+            @media (max-width: 500px) {
+                &{
+                  font-size: 1.05rem;
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+
+  h2{
+    font-size: 1rem;
+    font-weight: 400;
+    
+
+    strong{
+      color: var(--light);
+      text-transform: uppercase;
+      user-select: none;
+    }
+  }
+
+  .overall{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1.5fr)); 
+    gap: 24px;
+    margin-bottom: 52px;
+    
+
+    ul{
+      list-style: none;
+      padding-left: 0px;
+      line-height: 1.6rem;
+
+
+      li{
+        font-size: 0.9rem;
+      }
+    }
+
+    h2{
+      margin-bottom: 8px;
+      padding-bottom: 12px;
+    }
+  }
+
+  
+</style>

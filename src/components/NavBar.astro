@@ -18,7 +18,7 @@ import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
           <ButtonLinkNavBar href="/now" text="Now"/>
         </li>
         <li>
-          <ButtonLinkNavBar href="/blog" text="Blog"/>
+          <ButtonLinkNavBar href="/cv" text="CV"/>
         </li>
         <li>
           <ButtonLinkNavBar href="/contact" text="Contact"/>
@@ -64,13 +64,9 @@ import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
         }
       }
 
-      @media screen and (max-width: 768px) {
-        & {
-          width: 200px;
-        }
-      }
+      
 
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 750px) {
         & {
           width: 100%;
           padding: 16px;
@@ -84,13 +80,8 @@ import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
     margin-left: 250px;
   }
 
-  @media screen and (max-width: 768px) {
-    :global(body) {
-      margin-left: 200px;
-    }
-  }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 750px) {
     nav {
       position: relative;
       height: auto;
