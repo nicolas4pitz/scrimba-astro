@@ -42,6 +42,20 @@ const websites = defineCollection({
   })
 });
 
+const work = defineCollection({
+  loader: file('src/data/work.json'),
+  schema: z.object({ 
+    interprise: z.string(),
+    title: z.string(),
+    description: z.string().optional(),
+    image: z.string(),
+    slug: z.string(),
+    responsability: z.string(),
+    learning: z.string(),
+    date: z.string()
+  })
+});
+
 const games = defineCollection({
   loader: file('src/data/games.json'),
   schema: z.object({
@@ -57,4 +71,4 @@ const games = defineCollection({
 
 
 
-export const collections = { project, blog, websites, games };
+export const collections = { project, blog, websites, games, work };
