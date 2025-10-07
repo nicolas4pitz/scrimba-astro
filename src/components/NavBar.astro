@@ -28,8 +28,163 @@ import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
   </Container>
 </nav>
 
+<div id="nav-button">
+  <label class="burger" for="burger">
+    <input type="checkbox" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+</div>
+
+<nav class="nav sidebar" id="sidebar">
+  <Container padding="16px">
+    <div class="nav-container">
+      <div id="nav-container-image">
+        <a href="/"><img src="/images/np.svg" alt="Astra"/></a>
+      </div>
+      <ul class="nav-items">
+        <li>
+          <ButtonLinkNavBar href="/cv" text="CV"/>
+        </li>
+        <li>
+          <ButtonLinkNavBar href="/about" text="About"/>
+        </li>
+        <li>
+          <ButtonLinkNavBar href="/projects" text="Projects"/>
+        </li>
+        <li>
+          <ButtonLinkNavBar href="/contact" text="Contact"/>
+        </li>
+      </ul>
+    </div>
+  </Container>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const burgerCheckbox = document.getElementById('burger');
+    const sidebar = document.getElementById('sidebar');
+    const navButton = document.getElementById('nav-button');
+    
+    if (burgerCheckbox && sidebar && navButton) {
+      burgerCheckbox.addEventListener('change', () => {
+        if (burgerCheckbox.checked) {
+          sidebar.classList.add('sidebar-open');
+          navButton.classList.add('nav-button-moved');
+        } else {
+          sidebar.classList.remove('sidebar-open');
+          navButton.classList.remove('nav-button-moved');
+        }
+      });
+    }
+  });
+</script>
 
 <style>
+  .sidebar{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    display: block;
+    width: 250px;
+    z-index: 1000;
+    background-color: var(--secondary);
+    transition: left 0.3s ease-in-out;
+  }
+
+  /* Mostra a sidebar quando a classe sidebar-open é adicionada */
+  .sidebar.sidebar-open {
+    left: 0;
+  }
+
+  #nav-button{
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    z-index: 1001;
+    display: none; /* Escondido por padrão */
+    transition: left 0.3s ease-in-out; /* Adiciona transição suave */
+
+    .burger {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background: var(--secondary); 
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px; /* Bordas arredondadas */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+      transition: all 0.3s ease;
+    }
+
+    .burger:hover {
+      background: var(--primary); /* Muda cor no hover */
+    }
+
+    .burger:hover span {
+      background: var(--white); /* Linhas ficam brancas no hover */
+    }
+
+    .burger input {
+      display: none;
+    }
+
+    .burger span {
+      display: block;
+      position: absolute;
+      height: 3px; /* Um pouco mais fino */
+      width: 20px; /* Menor que o container */
+      background: var(--dark);
+      border-radius: 9px;
+      opacity: 1;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+
+    .burger span:nth-of-type(1) {
+      top: 12px; /* Ajustado para o centro */
+      transform-origin: center;
+    }
+
+    .burger span:nth-of-type(2) {
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transform-origin: center;
+    }
+
+    .burger span:nth-of-type(3) {
+      bottom: 12px; /* Ajustado para o centro */
+      top: auto;
+      transform-origin: center;
+    }
+
+    .burger input:checked ~ span:nth-of-type(1) {
+      transform: translateX(-50%) rotate(45deg);
+      top: 50%;
+    }
+
+    .burger input:checked ~ span:nth-of-type(2) {
+      width: 0%;
+      opacity: 0;
+    }
+
+    .burger input:checked ~ span:nth-of-type(3) {
+      transform: translateX(-50%) rotate(-45deg);
+      top: 50%;
+      bottom: auto;
+    }
+  }
+
+  /* Move o botão para a direita quando a sidebar está aberta */
+  #nav-button.nav-button-moved {
+    left: 260px; /* 250px da sidebar + 10px de margem */
+  }
+
   nav {
     background: var(--secondary);
     position: fixed;
@@ -63,33 +218,33 @@ import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
           font-size: 14px;
         }
       }
-
-      
-
-      @media screen and (max-width: 750px) {
-        & {
-          width: 100%;
-          padding: 16px;
-        }
-      }
     }
   }
 
   /* Adicione esta classe global para ajustar o conteúdo principal */
   :global(body) {
-    margin-left: 250px;
+    margin-left: 200px;
   }
 
-
   @media screen and (max-width: 750px) {
-    nav {
-      position: relative;
-      height: auto;
-      width: 100%;
+    /* Esconde a navbar principal */
+    nav:not(.sidebar) {
+      display: none;
+    }
+
+    /* Mostra o botão hamburger */
+    #nav-button {
+      display: block;
     }
     
+    /* Remove margem do body */
     :global(body) {
       margin-left: 0;
+    }
+
+    /* Sidebar fica escondida até ser ativada */
+    .sidebar {
+      left: -250px;
     }
   }
 </style>
