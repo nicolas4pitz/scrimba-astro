@@ -37,11 +37,18 @@ const {href, text} = Astro.props;
 
 {
     <a class="linka" href={`${href}`}>{text}
-    <HorizontalSeparatorNavBar/>
+    <div class='horizontal-separator'></div>
     </a>
 }
 
 <style>
+
+  .horizontal-separator {
+    width: 100%;
+    height: 1px;
+    background-color: var(--dark);
+    margin: 10px 0;
+  }
 
   a{
     text-transform: uppercase;

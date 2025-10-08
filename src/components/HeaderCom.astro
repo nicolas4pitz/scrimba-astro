@@ -8,8 +8,9 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 ---
 
 
+
 <SectionMainPage>
-  <header id="header">
+  <header id="header" class="tilt-element">
     <div id="content-header">
       <h1>
         Nícolas Pitz</h1>
@@ -30,6 +31,22 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 </SectionMainPage>
 
 
+<script>
+  import VanillaTilt from 'vanilla-tilt';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    VanillaTilt.init(document.querySelector(".tilt-element"), {
+      max: 5,
+      speed: 400,
+      scale: 1.0,
+      perspective: 2000,
+      "mouse-event-element":  true,
+      "full-page-listening": true
+    });
+  });
+</script>
+
+
 <style>
 
   #header{
@@ -38,8 +55,19 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
     grid-template-rows: repeat(2, 1fr);
     gap: 60px;
 
+    @media (max-width: 800px) {
+      &{
+        grid-template-columns: 1fr; /* Uma coluna única */
+        grid-template-rows: auto auto; /* Duas linhas automáticas */
+      }
+    }
+
     #content-header{
       grid-column: span 2 / span 2;
+
+      @media (max-width: 800px) {
+        grid-column: 1; /* Ocupa a única coluna disponível */
+      }
       
       h1{
         font-size: 144px;
@@ -50,10 +78,10 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
         @media (max-width: 1000px) {
           &{
             font-size: 13vw;
+            margin-bottom: 20px;
           }
         }
       }
-      
 
       span{
         font-size: 26px;
@@ -63,17 +91,23 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 
         @media (max-width: 800px) {
           &{
-            font-size: 22px;
+            font-size: 6vw;
           }
         }
       }
-
-      
     }
 
     .button-container{
       grid-row-start: 2;
       text-align: right;
+
+      @media (max-width: 800px) {
+        grid-column: 1; /* Ocupa a única coluna disponível */
+        grid-row: 2;
+        text-align: center; /* Centraliza os botões */
+        width: 85%; /* Garante que ocupe toda a largura */
+        margin: 0 auto;
+      }
     }
 
     .imgs{
@@ -82,17 +116,11 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 
       img{
         width: 260px;
+      }
 
-        @media (max-width: 800px) {
-          &{
-            width: 200px;
-          }
-        }
-
-        @media (max-width: 450px) {
-          &{
-            width: 100px;
-          }
+      @media (max-width: 800px) {
+        &{
+          display: none;
         }
       }
     }
