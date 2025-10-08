@@ -53,6 +53,12 @@ const {href, text} = Astro.props;
     text-align: right;
     font-weight: 500;
     width: 100%;
+
+    @media (max-width: 800px) {
+      &{
+        text-align: center;
+      }
+    }
   }
 
   .linka:hover{
