@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content";
-import ButtonLink from "../components/ButtonLink.astro";
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import HorizontalSeparator from "../components/HorizontalSeparator.astro";
 import NavBar from "../components/NavBar.astro";
 import HeaderDescription from "../components/HeaderDescription.astro";
+import ProjectCard from "../components/Projects/ProjectCard.astro";
 
 const projects = await getCollection("project");
 
@@ -13,9 +13,6 @@ const websites = await getCollection("websites");
 
 const games = await getCollection("games");
 
-//const prjWebPage = await getCollection("blog");
-
-const heading = "My Projects"
 
 ---
 
@@ -30,47 +27,17 @@ const heading = "My Projects"
     <div id="grid-separator">
       <h2>Software</h2>
       <div class="grid-enclauser">
-        {projects.map(project => (
-          <a href={`/projects/${project.data.slug}`}>
-            <div class="card">
-                <div>
-                  <h3>{project.data.title}</h3>
-                  <p class="description">{project.data.description}</p>
-                </div>
-            </div>
-          </a>
-          <HorizontalSeparator margin="16px 0px"/>
-        ))}
+        <ProjectCard projectMade={projects}/>
       </div>
 
       <h2>Games</h2>
       <div class="grid-enclauser">
-        {games.map(games => (
-          <a href={`/projects/${games.data.slug}`}>
-            <div class="card">
-                <div>
-                  <h3>{games.data.title}</h3>
-                  <p class="description">{games.data.description}</p>
-                </div>
-            </div>
-          </a>
-          <HorizontalSeparator margin="16px 0px"/>
-        ))}
+        <ProjectCard projectMade={games}/>
       </div>
 
       <h2>Websites</h2>
       <div class="grid-enclauser">
-        {websites.map(website => (
-          <a href={`/projects/${website.data.slug}`}>
-            <div class="card">
-                <div>
-                  <h3>{website.data.title}</h3>
-                  <p class="description">{website.data.description}</p>
-                </div>
-            </div>
-          </a>
-          <HorizontalSeparator margin="16px 0px"/>
-        ))}
+        <ProjectCard projectMade={websites}/>
       </div>
 
 
@@ -80,7 +47,7 @@ const heading = "My Projects"
 
 
 
-<style>
+<style is:global>
 
   #grid-separator{
     display: grid;
