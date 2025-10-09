@@ -1,0 +1,26 @@
+---
+import HorizontalSeparator from '../HorizontalSeparator.astro';
+import type { CollectionEntry } from 'astro:content';
+
+
+interface Props {
+  projectMade?: CollectionEntry<"websites" | "project" | "games">[]
+}
+
+const { projectMade } = Astro.props;
+
+---
+
+
+
+{projectMade.map(project => (
+          <a href={`/projects/${project.data.slug}`}>
+            <div class="card">
+                <div>
+                  <h3>{project.data.title}</h3>
+                  <p class="description">{project.data.description}</p>
+                </div>
+            </div>
+          </a>
+          <HorizontalSeparator margin="16px 0px"/>
+        ))}
