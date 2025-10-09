@@ -12,10 +12,10 @@ const work = await getCollection('work');
 
 const heading = 'CV';
 ---
-<NavBar />
+
 <Layout title="Blog">
-  
-  <Section>
+  <NavBar />
+  <Section transition:name="hero">
     <HeaderDescription heading="CV" description="Web Developer And Software Developer" links={true}/>
     <div class="overall">
       <div id="main-stack">
