@@ -56,9 +56,17 @@ const work = await getCollection('work');
               <div class="exp-description">
                 <p>{work.data.description}</p>
                 <h4>Key responsibilities</h4>
-                <p>{work.data.responsability}</p>
+                <ul class="exp-listagem">
+                  {work.data.responsability.split("#").map( res => (
+                    <li class="exp-lista">{res}</li>
+                  ))}
+                </ul>
                 <h4>New learnings</h4>
-                <p>{work.data.learning}</p>
+                <ul class="exp-listagem">
+                  {work.data.learning.split("#").map( res => (
+                    <li class="exp-lista">{res}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -145,6 +153,27 @@ const work = await getCollection('work');
           display: flex;
           flex-direction: column;
           gap: 20px;
+
+          .exp-listagem{
+            list-style: square;
+            
+          }
+
+          .exp-lista{
+            font-size: 1rem;
+            line-height: 1.5rem;
+
+            @media (max-width: 500px) {
+                &{
+                  font-size: 0.9rem;
+                  line-height: 1.3rem;
+                }
+              }
+          }
+
+          .exp-lista::marker{
+            color: var(--light);
+          }
 
           p{
             font-size: 1rem;  
