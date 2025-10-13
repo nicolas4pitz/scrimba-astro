@@ -3,6 +3,7 @@ import { getCollection, render, type CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import NavBar from "../../components/NavBar.astro";
+import Head from "../../components/Head.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -22,13 +23,23 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<NavBar />
 <Layout>
+<NavBar />
+
   <Section>
     <div class="post">
-      <!-- <img src={post.data.image} alt={post.data.title} class="post-image"/> -->
       <h1 class="post-title">{post.data.title}</h1>
-      <p class="post-date">{post.data.date}</p>
+      <div class="post-div">
+        <span class="post-date">{post.data.date}</span>
+        <a href=`${post.data.githubURL}` rel=`Link para pagina do Github do projeto ${post.data.title}` class="post-giturl">{() =>{
+          const url = post.data.githubURL.match(/github\.com\/([^\/]+)\/([^\/]+)/)
+          if(url){
+            return url[1] + "/" + url[2]
+          }
+        }
+        }</a>
+      </div>
+      <img src={post.data.image} alt=" " class="post-image"/>
       <Content/>
     </div>
   </Section>
@@ -37,6 +48,28 @@ const { Content } = await render(post);
 
 <style>
   .post {
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+
+      @media (max-width: 500px) {
+        &{
+          font-size: 0.9rem;
+          line-height: 1.3rem;
+        }
+      }
+    }
+
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5rem;
+      font-size: 1rem;
+
+    }
+
     .post-image {
       width: 100%;
       object-fit: cover;
@@ -44,14 +77,33 @@ const { Content } = await render(post);
       border-radius: 10px;
     }
 
+    .post-div{
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+      line-height: 24px;
+    }
+
     .post-title {
       margin-bottom: 16px;
     }
 
     .post-date {
-      font-size: 20px;
       color: var(--light);
-      margin-bottom: 30px;
+    }
+
+    .post-giturl{
+      color: var(--light);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .post-giturl:hover{
+      color: var(--primary);
+      text-decoration: underline;
+      cursor: pointer;
     }
 
     h2 {
