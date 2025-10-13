@@ -1,23 +1,25 @@
 [
-    {
-      "interprise": "Empresas",
-      "title" : "Nome Vagas",
-      "slug": "gg",
-      "description": "A atividade consistia em bla bla",
+  {
+      "interprise": "IFSC SJ",
+      "title" : "Intern Grant ",
+      "slug": "flapbird",
+      "description": "I supported course communication, student assistance, and technical operations at Lab-Solar. I managed social media channels (Instagram, LinkedIn, WhatsApp), created visual materials in Canva, and helped maintain a consistent visual identity. I also handled student documentation, Moodle access, and withdrawals, organized files and forms in Google Workspace, and contributed to technical activities such as photovoltaic module maintenance, equipment setup, and cable assembly.",
       "image": "/images/projects/todo.png",
-      "responsability": "teste dad wad ad asdad dwadwakd mwaiodjuiwahj bfgeui hfwfhweufh weufhweuifhewu hfewufhwefwe fuiwehfuiewh fuewhfuwehufhw eufweuhfuew fuwehfu wefhewuhf uwefuiweh fuiwefwe fweufw eufewuhfwueh fwuehf weufwuef weufhwuefweufu wefuquwddwquu u hu uh uh euhqeuh qweuhqwuehqe qe uqe qhueuhqf hneufhewnf uwhu",
-      "learning": "teste",
-      "date": "2023-2024"
+      "responsability": "Managed internal and external communication for academic courses, overseeing social media channels (Instagram, LinkedIn, WhatsApp) and producing visual content with Canva to maintain brand consistency# Assisted students with administrative and academic procedures, managing documentation, Moodle access, and withdrawal requests through WhatsApp and email# Organized institutional files, designed digital forms and spreadsheets in Google Workspace, and collaborated with Lab-Solar on technical operations such as photovoltaic module installation, wiring, and equipment maintenance",
+      "learning": "Developed communication and digital marketing skills by managing social media platforms (Instagram, LinkedIn, WhatsApp), creating visual materials in Canva, and ensuring consistent branding# Strengthened interpersonal and organizational abilities through direct student support, documentation management, and coordination of academic requests# Gained technical experience assisting Lab-Solar operations, including the installation and maintenance of photovoltaic systems, cabling, and equipment configuration",
+      "date": "2024-2025"
     },
 
     {
-      "interprise": "Empresa",
-      "title" : "Nome Vaga",
-      "slug": "flapbird",
-      "description": "A atividade consistia em bla bla",
+      "interprise": "Yama Tech",
+      "title" : "Intern",
+      "slug": "gg",
+      "description": "Assisted in the installation and maintenance of telephone and internet networks, as well as troubleshooting communication infrastructure",
       "image": "/images/projects/todo.png",
-      "responsability": "teste dad wad ad asdad dwadwakd mwaiodjuiwahj bfgeui hfwfhweufh weufhweuifhewu hfewufhwefwe fuiwehfuiewh fuewhfuwehufhw eufweuhfuew fuwehfu wefhewuhf uwefuiweh fuiwefwe fweufw eufewuhfwueh fwuehf weufwuef weufhwuefweufu wefuquwddwquu u hu uh uh euhqeuh qweuhqwuehqe qe uqe qhueuhqf hneufhewnf uwhu",
-      "learning": "teste",
+      "responsability": "Install, configure, and maintain telephone and internet network systems in residential or institutional environments# Perform troubleshooting and diagnostics on communication infrastructure, including cabling, routers, and network devices# Assist in the installation and maintenance of electrical wiring and distribution panels",
+      "learning": "Gained hands-on experience in the installation and maintenance of telecommunication and internet networks, learning to identify and troubleshoot infrastructure issues# Acquired practical knowledge of residential electrical systems, including wiring setup, panel configuration, and adherence to safety regulations",
       "date": "2023-2024"
     }
+
+    
   ]
