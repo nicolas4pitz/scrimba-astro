@@ -1,5 +1,4 @@
 ---
-
 interface Props{
   href: string;
   text: string;
@@ -8,7 +7,6 @@ interface Props{
 }
 
 const { href, text, variant="primary", isDownload = false } = Astro.props;
-
 ---
 
 {isDownload &&

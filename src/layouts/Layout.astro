@@ -2,21 +2,15 @@
 import Head from '../components/Head.astro';
 
 
-interface Props {
-  barba?: string;
-}
-
-const { barba = "null" } = Astro.props;
-
 ---
 
 <!doctype html>
 <html lang="en">
   <Head />
 
-  <body data-barba="wrapper">
+  <body>
 
-    <div class="wrapper" data-barba="container" data-barba-namespace={barba}>
+    <div class="wrapper">
       <slot />
     </div>
 

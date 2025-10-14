@@ -2,11 +2,7 @@
 import { getCollection } from "astro:content";
 import HorizontalSeparator from "../HorizontalSeparator.astro";
 
-
-
-
 const work = await getCollection('work');
-
 ---
 
 
@@ -145,7 +141,9 @@ const work = await getCollection('work');
           .exp-title-gradient{
             width: 25px;
             height: 25px;
-            background-color: var(--primary);
+            background: linear-gradient(-45deg, var(--dark), var(--primary), var(--secondary), var(--light));
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
           }
         }
 
@@ -203,6 +201,8 @@ const work = await getCollection('work');
     }
   }
 
+
+
   h2{
     font-size: 1rem;
     font-weight: 400;
@@ -239,5 +239,17 @@ const work = await getCollection('work');
     }
   }
 
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
   
 </style>
