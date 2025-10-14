@@ -221,9 +221,6 @@ import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
   }
 
   /* Adicione esta classe global para ajustar o conteúdo principal */
-  :global(body) {
-    margin-left: 200px;
-  }
 
   @media screen and (max-width: 750px) {
     /* Esconde a navbar principal */
@@ -239,7 +236,7 @@ import ButtonLinkNavBar from "./NavBar/ButtonLinkNavBar.astro"
     /* Remove margem do body */
     :global(body) {
       margin-left: 0;
-    }
+    } 
 
     /* Sidebar fica escondida até ser ativada */
     .sidebar {

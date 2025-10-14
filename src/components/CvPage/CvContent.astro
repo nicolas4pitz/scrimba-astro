@@ -74,6 +74,19 @@ const work = await getCollection('work');
 
 
 <style>
+
+  body{
+
+    @media screen and (max-width: 750px) {
+    /* Esconde a navbar principal */
+    
+    &{
+      margin-left: 0;
+    } 
+  }
+
+  }
+
   .work{
     display: flex;
     flex-direction: column;
