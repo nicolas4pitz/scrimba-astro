@@ -1,24 +1,37 @@
 ---
-title: Nes Emulator Game Landing Page
-description: A design of a popular NES Emulator for PC. Built with Wordpress
+title: Nes Emulator
+description: Learn what the Document Object Model (DOM) is with a simple analogy and discover how it enables interactivity on any website.
 date: "2025-09-04"
-image: "/images/posts/dom.png"
+image: "/images/posts/nespage.png"
 tags:
   - JavaScript
   - DOM
   - Front-End
   - Fundamentals
-slug: neswebemulator
-githubURL: "https://github.com/nicolas4pitz/meta-project-react-javascript"
-liveSiteURL: "https://github.com/nicolas4pitz/meta-project-react-javascript"
+slug: nesweb
+githubURL: " "
+liveSiteURL: " "
 ---
 
-RayTracing is a technology that generates real-time reflections and realistic lighting by simulating the physical behavior of light rays.  
-This project implements a simple ray tracer that renders an image based on predefined geometric shapes. Once the scene is configured, the program can be executed to generate the final image, performing all ray tracing computations during the rendering process.
+This project consists of a **landing page for a NES Emulator program**, designed to attract users and encourage engagement through a clean and optimized interface.
 
-The system follows the structure and concepts presented in **Peter Shirley's "Ray Tracing in One Weekend" book series**, featuring key components such as rays, hitable objects, materials, and cameras. Each pixel of the image is determined by tracing rays from the camera into the scene, calculating intersections with objects, and applying material properties like reflection, refraction, and diffuse scattering to compute the final color.
+The website was developed using **WordPress**, with the support of several plugins including **Astra**, **Companion Auto Update**, **EWWW Image Optimizer**, **Google Analytics for WordPress**, **Microthemer**, **Rank Math SEO**, **Really Simple SSL**, **Ultimate Addons for Gutenberg**, **UpdraftPlus Backup**, **WP Mail SMTP**, **WP Super Cache**, and **WPForms Lite**. The focus was on user engagement, responsive design, and conversion optimization.
 
-The project supports multiple geometric primitives such as **spheres**, **planes**, and **lambertian surfaces**, with extendable interfaces for adding new shapes or materials. The renderer includes features like **antialiasing**, **depth of field**, and **recursive ray bounces** for global illumination.
 
-The goal of this implementation is to provide a clear, educational, and minimalistic foundation for understanding the fundamentals of ray tracing, focusing on readability and step-by-step experimentation rather than performance optimization.
+## Key Contributions
 
+- **Custom Design:** Created a unique and visually appealing layout that reflects NES branding and captures the attention of the target audience.  
+- **Content Integration:** Added relevant content such as product descriptions, images, and call-to-action elements to clearly present the NES emulator’s features.  
+- **Functionality Enhancement:** Used plugins to implement essential tools like contact forms, social media integration, and analytics tracking for user behavior insights.  
+- **Responsive Optimization:** Ensured the landing page delivers a seamless experience across desktops, tablets, and mobile devices.  
+- **Testing and Quality Assurance:** Conducted thorough testing to detect and fix potential issues, ensuring smooth performance across various browsers.  
+
+
+## Tools & Technologies
+- **Platform:** WordPress  
+- **Design Tools:** Microthemer, Astra Theme, Ultimate Addons for Gutenberg  
+- **Optimization:** EWWW Image Optimizer, Rank Math SEO, WP Super Cache  
+- **Analytics & Utilities:** Google Analytics, WPForms Lite, UpdraftPlus Backup  
+
+## Summary
+This project demonstrates proficiency in **WordPress development**, **SEO optimization**, and **user-focused design**. The page effectively balances aesthetics and performance, providing a professional and engaging web experience for users interested in the NES Emulator.

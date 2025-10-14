@@ -10,7 +10,7 @@ tags:
   - Fundamentals
 slug: raytracing
 githubURL: "https://github.com/nicolas4pitz/rayTracing"
-liveSiteURL: "https://github.com/nicolas4pitz/rayTracing"
+liveSiteURL: ""
 ---
 
 RayTracing is a technology that generates real-time reflections and realistic lighting by simulating the physical behavior of light rays.  

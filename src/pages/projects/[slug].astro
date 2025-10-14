@@ -31,11 +31,19 @@ const { Content } = await render(post);
       <h1 class="post-title">{post.data.title}</h1>
       <div class="post-div">
         <span class="post-date">{post.data.date}</span>
-        <a href=`${post.data.githubURL}` rel=`Link para pagina do Github do projeto ${post.data.title}` class="post-giturl">{() =>{
+        <a href=`${post.data.liveSiteURL ? post.data.liveSiteURL : post.data.githubURL}` rel=`Link para pagina do Github do projeto ${post.data.title}` target="_blank" class="post-giturl">{() =>{
+          if(post.data.liveSiteURL){
+            const url = post.data.liveSiteURL.match(/github\.com\/([^\/]+)\/([^\/]+)/)
+            if(url){
+              return url[1] + "/" + url[2]
+            }
+          }
+
           const url = post.data.githubURL.match(/github\.com\/([^\/]+)\/([^\/]+)/)
           if(url){
             return url[1] + "/" + url[2]
           }
+          
         }
         }</a>
       </div>
@@ -62,12 +70,11 @@ const { Content } = await render(post);
     }
 
 
-    ul{
+    ul, ol{
       display: flex;
       flex-direction: column;
       line-height: 1.5rem;
       font-size: 1rem;
-
     }
 
     .post-image {

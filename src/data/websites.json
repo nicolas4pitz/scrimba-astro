@@ -11,7 +11,7 @@
   
     {
       "title" : "NES Emulator Game Landing Page",
-      "slug": "neswebemulator",
+      "slug": "nesweb",
       "IsIt": "Website", 
       "description": "A design of a popular NES Emulator for PC. Built with Wordpress",
       "image": "/images/projects/pr2.png",
