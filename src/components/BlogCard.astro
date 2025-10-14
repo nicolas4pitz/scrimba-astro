@@ -6,13 +6,9 @@ interface Props {
   blog: CollectionEntry<"blog">;
 }
 
-//access blog prop
 const {blog} = Astro.props;
-
-//access blog prop
 ---
 
-<!-- display blog card -->
 <div class="blog-card">
 <h3>{blog.data.title}</h3>
   <div class="metadata">
@@ -27,9 +23,6 @@ const {blog} = Astro.props;
     variant="secondary"
   />
 </div>
-
-
-<!-- styles -->
 
 <style>
   .blog-card {

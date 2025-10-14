@@ -5,16 +5,13 @@ interface Props{
 }
 
 const { cta, heading } = Astro.props;
-
 ---
 
 
 <div class="section-header">
     <h2>
-      <!-- add the h2 heading -->
       {heading}
     </h2>
-    <!-- update the href and text using the cta object -->
     <a href={cta.href}>{cta.text}</a>
 </div>
 
