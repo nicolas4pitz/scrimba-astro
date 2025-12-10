@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import Section from "../components/Section.astro";
+import HeaderDescription from "../components/HeaderDescription.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+---
+
+<Layout>
+  <NavBar />
+  <Section>
+    <div id="in-construction">
+      <HeaderDescription 
+        heading="Books & Reviews"
+        description="This page is currently under construction. Soon you'll find my book notes, highlights and reviews here."
+      />
+
+      <p class="in-construction-text">
+        I’m still organizing the structure for the book reviews section – summaries, key takeaways and personal thoughts.
+        While this is not ready yet, feel free to explore my other projects.
+      </p>
+
+      <div class="in-construction-actions">
+        <ButtonLink href="/projects" text="View Projects" />
+        <ButtonLink href="/" text="Back to Home" />
+      </div>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  #in-construction {
+    max-width: 800px;
+  }
+
+  #in-construction .in-construction-text {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    color: var(--light);
+    max-width: 620px;
+  }
+
+  #in-construction .in-construction-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) {
+    #in-construction .in-construction-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
