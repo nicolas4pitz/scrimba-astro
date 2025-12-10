@@ -10,7 +10,7 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
     <div id="content-header">
       <h1>
         Nícolas Pitz</h1>
-      <span>Web Design & Developer</span>
+      <span class="auto-type"></span>
     </div>
     
     <div class="button-container">
@@ -29,6 +29,7 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 
 <script>
   import VanillaTilt from 'vanilla-tilt';
+  import Typed from '../../public/typed';
   
   document.addEventListener('DOMContentLoaded', () => {
     VanillaTilt.init(document.querySelector(".tilt-element"), {
@@ -40,6 +41,15 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
       "full-page-listening": true
     });
   });
+
+  var typed = new Typed('.auto-type', {
+      strings: ['Developer', 'Designer', 'Software Engineer'],
+      typeSpeed: 150,
+      backSpeed: 120,
+      loop: true,
+
+    });
+
 </script>
 
 
@@ -64,6 +74,7 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
 
     #content-header{
       grid-column: span 2 / span 2;
+      text-align: center;
 
       @media (max-width: 800px) {
         grid-column: 1; /* Ocupa a única coluna disponível */
@@ -84,14 +95,13 @@ import ButtonLinkMainPage from "./MainPage/ButtonLinkMainPage.astro"
       }
 
       span{
-        font-size: 26px;
-        display: block;
-        text-align: justify;
-        text-align-last: justify;
+        font-size: 4vw;
+        display: inline-block;
+        
 
         @media (max-width: 800px) {
           &{
-            font-size: 6vw;
+            font-size: 5.5vw;
           }
         }
       }
