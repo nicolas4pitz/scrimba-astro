@@ -28,7 +28,6 @@
       "githubURL": "https://github.com/nicolas4pitz/netflix",
       "liveSiteURL": "https://nicolas4pitz.github.io/netflix/"
     },
-  
     {
       "title" : "Costs Project",
       "slug": "costs",
@@ -37,6 +36,15 @@
       "image": "/images/projects/pr1.png",
       "githubURL": "https://github.com/nicolas4pitz/reactCosts",
       "liveSiteURL": "https://reactcostsproject.vercel.app/"
+    },
+    {
+      "title" : "NFTDOT - Marketplace",
+      "slug": "nftdot",
+      "IsIt": "Website", 
+      "description": "A modern NFT marketplace landing page to explore, buy and sell digital art. Built with HTML, CSS and Bootstrap, featuring responsive design and smooth animations.",
+      "image": "/images/projects/pr1.png",
+      "githubURL": "https://github.com/nicolas4pitz/nft-marketplace",
+      "liveSiteURL": "https://nicolas4pitz.github.io/nft-marketplace/"
     }
 
   ]
