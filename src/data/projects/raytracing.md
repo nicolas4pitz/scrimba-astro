@@ -2,7 +2,7 @@
 title: RayTracing
 description: Learn what the Document Object Model (DOM) is with a simple analogy and discover how it enables interactivity on any website.
 date: "2025-09-04"
-image: " "
+image: "/images/posts/raytracing.png"
 tags:
   - JavaScript
   - DOM
