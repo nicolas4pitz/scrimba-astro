@@ -27,5 +27,16 @@
       "image": "/images/projects/pr1.png",
       "githubURL": "https://github.com/nicolas4pitz/netflix",
       "liveSiteURL": "https://nicolas4pitz.github.io/netflix/"
+    },
+  
+    {
+      "title" : "Costs Project",
+      "slug": "costs",
+      "IsIt": "Website", 
+      "description": "A project cost management app to track budgets and services. Built with React, React Router and localStorage for data persistence.",
+      "image": "/images/projects/pr1.png",
+      "githubURL": "https://github.com/nicolas4pitz/reactCosts",
+      "liveSiteURL": "https://reactcostsproject.vercel.app/"
     }
+
   ]
